@@ -1,0 +1,35 @@
+.container {
+  @apply flex flex-col space-y-3 items-center;
+}
+
+.title {
+  @apply font-bold text-xl;
+}
+
+.subtitle {
+  @apply text-gray-500;
+}
+
+.button {
+  @apply bg-green-300 hover:bg-green-500 hover:text-white border rounded-lg p-3 mt-3 text-center w-32;
+}
+
+.delete {
+  @apply bg-red-300 hover:bg-red-500 hover:text-white border rounded-lg p-3 mt-3 w-32;
+}
+
+.container-button {
+  @apply flex space-x-10 pb-5;
+}
+
+.desktop {
+  @apply w-[2340px] h-[700px];
+}
+
+.tablet {
+  @apply w-[1440px] h-[1080px];
+}
+
+.mobile {
+  @apply w-[1920px] h-[1080px];
+}
