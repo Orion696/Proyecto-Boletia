@@ -1,3 +1,7 @@
+¡Claro! Aquí tienes una documentación técnica detallada para el archivo `README.md` sin incluir el código, pero explicando cada parte del proyecto y su configuración.
+
+---
+
 # Boletia Internal Tool
 
 ## Introducción
@@ -10,6 +14,8 @@ El proyecto sigue una estructura organizada para facilitar el mantenimiento y la
 
 ```
 src/
+├── assets/
+│   ├── images/
 ├── components/
 │   ├── BannerForm/
 │   │   ├── BannerForm.js
@@ -24,7 +30,7 @@ src/
 ├── App.js
 ├── index.js
 ├── index.css
-
+```
 
 ### Descripción de Carpetas y Archivos
 
@@ -50,21 +56,27 @@ src/
 Para configurar el proyecto, siga los siguientes pasos:
 
 1. **Crear la aplicación React**:
+   ```bash
    npx create-react-app boletia-app
    cd boletia-app
+   ```
 
 2. **Instalar React Router**:
+   ```bash
    npm install react-router-dom@latest
+   ```
 
 3. **Instalar y configurar Tailwind CSS**:
+   ```bash
    npm install tailwindcss@latest postcss@latest autoprefixer@latest
    npx tailwindcss init -p
+   ```
    Luego, configure el archivo `tailwind.config.js` y agregue Tailwind a su `index.css`.
 
 ### Configuración de Tailwind CSS
 
 1. **Actualizar `tailwind.config.js`**:
-   javascript
+   ```javascript
    module.exports = {
      content: [
        "./src/**/*.{js,jsx,ts,tsx}",
@@ -74,20 +86,21 @@ Para configurar el proyecto, siga los siguientes pasos:
      },
      plugins: [],
    }
+   ```
 
 2. **Actualizar `index.css`**:
-   css
+   ```css
    @tailwind base;
    @tailwind components;
    @tailwind utilities;
-
+   ```
 
 ## Ejecución del Proyecto
 
 Para iniciar la aplicación, ejecute el siguiente comando:
-
+```bash
 npm start
-
+```
 
 ## Descripción de Componentes
 
@@ -147,4 +160,7 @@ Para agregar nuevas funcionalidades o módulos, cree nuevos componentes y págin
 ## Conclusión
 
 Esta documentación proporciona una guía completa y técnica del proyecto Boletia Internal Tool, cubriendo desde la estructura del proyecto hasta la configuración, ejecución y mantenimiento. Si tiene alguna pregunta o necesita más detalles, por favor consulte los archivos de código fuente o contacte al equipo de desarrollo.
-```
+
+---
+
+Esta documentación debería ser suficiente para proporcionar una guía técnica clara y detallada del proyecto en tu archivo `README.md`. Si necesitas más detalles o ajustes, por favor avísame.
