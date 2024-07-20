@@ -1,7 +1,3 @@
-¡Claro! Aquí tienes una documentación técnica detallada para el archivo `README.md` sin incluir el código, pero explicando cada parte del proyecto y su configuración.
-
----
-
 # Boletia Internal Tool
 
 ## Introducción
@@ -160,7 +156,3 @@ Para agregar nuevas funcionalidades o módulos, cree nuevos componentes y págin
 ## Conclusión
 
 Esta documentación proporciona una guía completa y técnica del proyecto Boletia Internal Tool, cubriendo desde la estructura del proyecto hasta la configuración, ejecución y mantenimiento. Si tiene alguna pregunta o necesita más detalles, por favor consulte los archivos de código fuente o contacte al equipo de desarrollo.
-
----
-
-Esta documentación debería ser suficiente para proporcionar una guía técnica clara y detallada del proyecto en tu archivo `README.md`. Si necesitas más detalles o ajustes, por favor avísame.
