@@ -155,4 +155,3 @@ Para agregar nuevas funcionalidades o módulos, cree nuevos componentes y págin
 
 ## Conclusión
 
-Esta documentación proporciona una guía completa y técnica del proyecto Boletia, cubriendo desde la estructura del proyecto hasta la configuración, ejecución y mantenimiento. Si tiene alguna pregunta o necesita más detalles, por favor consulte los archivos de código fuente o contacte al equipo de desarrollo.
