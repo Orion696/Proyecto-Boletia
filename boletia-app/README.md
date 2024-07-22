@@ -10,8 +10,6 @@ El proyecto sigue una estructura organizada para facilitar el mantenimiento y la
 
 ```
 src/
-├── assets/
-│   ├── images/
 ├── components/
 │   ├── BannerForm/
 │   │   ├── BannerForm.js
