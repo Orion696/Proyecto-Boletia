@@ -50,8 +50,8 @@ Para configurar el proyecto, siga los siguientes pasos:
 
 1. **Crear la aplicación React**:
    ```bash
-   npx create-react-app boletia-app
    cd boletia-app
+   npm install
    ```
 
 2. **Instalar React Router**:
