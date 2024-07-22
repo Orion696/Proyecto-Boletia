@@ -28,7 +28,6 @@ src/
 
 ### Descripción de Carpetas y Archivos
 
-- **`src/assets/`**: Contiene recursos estáticos como imágenes.
 - **`src/components/`**: Contiene los componentes reutilizables de la aplicación.
   - **`BannerForm/`**: Componente para el formulario de configuración de banners.
   - **`BannerList/`**: Componente para listar y mostrar los banners configurados.
