@@ -48,7 +48,7 @@ src/
 
 Para configurar el proyecto, siga los siguientes pasos:
 
-1. **Crear la aplicación React**:
+1. **Configurar la aplicación React**:
    ```bash
    cd boletia-app
    npm install
