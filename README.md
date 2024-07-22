@@ -58,11 +58,6 @@ Para configurar el proyecto, siga los siguientes pasos:
     npm install
     ```
 
-3. Ejecutar el proyecto:
-    ```sh
-    npm start
-    ```
-
 ---
 
 ## Descripción de Componentes
