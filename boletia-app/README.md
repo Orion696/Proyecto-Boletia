@@ -37,56 +37,31 @@ src/
 - **`src/index.js`**: Punto de entrada principal de la aplicación.
 - **`src/index.css`**: Archivo de estilos globales utilizando Tailwind CSS.
 
-## Configuración del Entorno
 
-### Requisitos Previos
-
+#### Requisitos previos
 - Node.js
-- npm (Node Package Manager)
+- npm (Administrador de paquetes de Node)
 
-### Instalación
-
+#### Instalación
 Para configurar el proyecto, siga los siguientes pasos:
 
-1. **Configurar la aplicación React**:
-   ```bash
-   cd boletia-app
-   npm install
-   ```
+1. Clonar el repositorio:
+    ```sh
+    git clone https://github.com/Orion696/Proyecto-Boletia.git
+    cd Proyecto-Boletia
+    ```
 
-2. **Instalar React Router**:
-   ```bash
-   npm install react-router-dom@latest
-   ```
+2. Instalar las dependencias:
+    ```sh
+    npm install
+    ```
 
-3. **Instalar y configurar Tailwind CSS**:
-   ```bash
-   npm install tailwindcss@latest postcss@latest autoprefixer@latest
-   npx tailwindcss init -p
-   ```
-   Luego, configure el archivo `tailwind.config.js` y agregue Tailwind a su `index.css`.
+3. Ejecutar el proyecto:
+    ```sh
+    npm start
+    ```
 
-### Configuración de Tailwind CSS
-
-1. **Actualizar `tailwind.config.js`**:
-   ```javascript
-   module.exports = {
-     content: [
-       "./src/**/*.{js,jsx,ts,tsx}",
-     ],
-     theme: {
-       extend: {},
-     },
-     plugins: [],
-   }
-   ```
-
-2. **Actualizar `index.css`**:
-   ```css
-   @tailwind base;
-   @tailwind components;
-   @tailwind utilities;
-   ```
+---
 
 ## Ejecución del Proyecto
 
