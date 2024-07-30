@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import styles from "./BannerForm.module.css";
+import React, { useState } from 'react';
+import './BannerForm.css';
 
 function BannerForm({ onAddBanner }) {
   const [formData, setFormData] = useState({
-    eventName: "",
-    eventDate: "",
-    eventTime: "",
-    purchaseUrl: "",
+    eventName: '',
+    eventDate: '',
+    eventTime: '',
+    purchaseUrl: '',
     imageDesktop: null,
     imageTablet: null,
     imageMobile: null,
@@ -24,26 +24,20 @@ function BannerForm({ onAddBanner }) {
 
   const validate = () => {
     const errors = {};
-    const urlPattern = new RegExp(
-      "^(https?:\\/\\/)?" +
-        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|" +
-        "((\\d{1,3}\\.){3}\\d{1,3}))" +
-        "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" +
-        "(\\?[;&a-z\\d%_.~+=-]*)?" +
-        "i"
-    );
+    const urlPattern = new RegExp('^(https?:\\/\\/)?'+
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+
+      '((\\d{1,3}\\.){3}\\d{1,3}))'+
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+
+      '(\\?[;&a-z\\d%_.~+=-]*)?'+
+      '(\\#[-a-z\\d_]*)?$','i');
 
-    if (!formData.eventName) errors.eventName = "Event name is required";
-    if (!formData.eventDate) errors.eventDate = "Event date is required";
-    if (!formData.eventTime) errors.eventTime = "Event time is required";
-    if (!formData.purchaseUrl || !urlPattern.test(formData.purchaseUrl))
-      errors.purchaseUrl = "Valid URL is required";
-    if (formData.imageDesktop && formData.imageDesktop.size / 1024 > 800)
-      errors.imageDesktop = "Desktop image size should not exceed 800KB";
-    if (formData.imageTablet && formData.imageTablet.size / 1024 > 800)
-      errors.imageTablet = "Tablet image size should not exceed 800KB";
-    if (formData.imageMobile && formData.imageMobile.size / 1024 > 800)
-      errors.imageMobile = "Mobile image size should not exceed 800KB";
+    if (!formData.eventName) errors.eventName = 'Event name is required';
+    if (!formData.eventDate) errors.eventDate = 'Event date is required';
+    if (!formData.eventTime) errors.eventTime = 'Event time is required';
+    if (!formData.purchaseUrl || !urlPattern.test(formData.purchaseUrl)) errors.purchaseUrl = 'Valid URL is required';
+    if (formData.imageDesktop && formData.imageDesktop.size / 1024 > 80) errors.imageDesktop = 'Desktop image size should not exceed 80KB';
+    if (formData.imageTablet && formData.imageTablet.size / 1024 > 80) errors.imageTablet = 'Tablet image size should not exceed 80KB';
+    if (formData.imageMobile && formData.imageMobile.size / 1024 > 80) errors.imageMobile = 'Mobile image size should not exceed 80KB';
 
     return errors;
   };
@@ -57,10 +51,10 @@ function BannerForm({ onAddBanner }) {
     }
     onAddBanner(formData);
     setFormData({
-      eventName: "",
-      eventDate: "",
-      eventTime: "",
-      purchaseUrl: "",
+      eventName: '',
+      eventDate: '',
+      eventTime: '',
+      purchaseUrl: '',
       imageDesktop: null,
       imageTablet: null,
       imageMobile: null,
@@ -69,95 +63,102 @@ function BannerForm({ onAddBanner }) {
   };
 
   return (
-    <form className={styles.container} onSubmit={handleSubmit}>
-      <label className={styles.label}>Event Name:</label>
-      <input
-        type="text"
-        name="eventName"
-        className={styles.input}
-        value={formData.eventName}
-        onChange={handleChange}
-        required
-      />
-      {errors.eventName && <span>{errors.eventName}</span>}
-      <label className={styles.label}>Event Date:</label>
-      <input
-        type="date"
-        name="eventDate"
-        className={styles.input}
-        value={formData.eventDate}
-        onChange={handleChange}
-        required
-      />
-      {errors.eventDate && <span>{errors.eventDate}</span>}
+    <div className="banner-form-container">
+      <form className="banner-form" onSubmit={handleSubmit}>
+        <label>
+          Event Name:
+          <input 
+            type="text" 
+            name="eventName" 
+            value={formData.eventName} 
+            onChange={handleChange} 
+            required 
+            placeholder="Enter the event name" 
+          />
+          {errors.eventName && <span className="error">{errors.eventName}</span>}
+        </label>
 
-      <label className={styles.label}>Event Time:</label>
-      <input
-        type="time"
-        name="eventTime"
-        className={styles.input}
-        value={formData.eventTime}
-        onChange={handleChange}
-        required
-      />
-      {errors.eventTime && <span>{errors.eventTime}</span>}
+        <div className="date-time-container">
+          <label>
+            Event Date:
+            <input 
+              type="date" 
+              name="eventDate" 
+              value={formData.eventDate} 
+              onChange={handleChange} 
+              required 
+              placeholder="Select the event date" 
+            />
+            {errors.eventDate && <span className="error">{errors.eventDate}</span>}
+          </label>
+          <label>
+            Event Time:
+            <input 
+              type="time" 
+              name="eventTime" 
+              value={formData.eventTime} 
+              onChange={handleChange} 
+              required 
+              placeholder="Select the event time" 
+            />
+            {errors.eventTime && <span className="error">{errors.eventTime}</span>}
+          </label>
+        </div>
 
-      <label className={styles.label}>Purchase URL:</label>
-      <input
-        type="url"
-        name="purchaseUrl"
-        className={styles.input}
-        value={formData.purchaseUrl}
-        onChange={handleChange}
-        required
-      />
-      {errors.purchaseUrl && <span>{errors.purchaseUrl}</span>}
+        <label>
+          Purchase URL:
+          <input 
+            type="url" 
+            name="purchaseUrl" 
+            value={formData.purchaseUrl} 
+            onChange={handleChange} 
+            required 
+            placeholder="Enter the purchase URL" 
+          />
+          {errors.purchaseUrl && <span className="error">{errors.purchaseUrl}</span>}
+        </label>
 
-      <label className={styles.label}>Desktop Image:</label>
-      <input
-        type="file"
-        name="imageDesktop"
-        className={styles.input}
-        accept="image/*"
-        onChange={handleChange}
-        required
-      />
-      {errors.imageDesktop && (
-        <span className={styles.error}>{errors.imageDesktop}</span>
-      )}
+        <div className="image-fields-container">
+          <label>
+            Desktop Image:
+            <input 
+              type="file" 
+              name="imageDesktop" 
+              accept="image/*" 
+              onChange={handleChange} 
+              required 
+            />
+            {errors.imageDesktop && <span className="error">{errors.imageDesktop}</span>}
+          </label>
+          <label>
+            Tablet Image:
+            <input 
+              type="file" 
+              name="imageTablet" 
+              accept="image/*" 
+              onChange={handleChange} 
+              required 
+            />
+            {errors.imageTablet && <span className="error">{errors.imageTablet}</span>}
+          </label>
+          <label>
+            Mobile Image:
+            <input 
+              type="file" 
+              name="imageMobile" 
+              accept="image/*" 
+              onChange={handleChange} 
+              required 
+            />
+            {errors.imageMobile && <span className="error">{errors.imageMobile}</span>}
+          </label>
+        </div>
 
-      <label className={styles.label}>Tablet Image:</label>
-      <input
-        type="file"
-        name="imageTablet"
-        className={styles.input}
-        accept="image/*"
-        onChange={handleChange}
-        required
-      />
-      {errors.imageTablet && (
-        <span className={styles.error}>{errors.imageTablet}</span>
-      )}
-
-      <label className={styles.label}>Mobile Image:</label>
-      <input
-        type="file"
-        name="imageMobile"
-        className={styles.input}
-        accept="image/*"
-        onChange={handleChange}
-        required
-      />
-      {errors.imageMobile && (
-        <span className={styles.error}>{errors.imageMobile}</span>
-      )}
-
-      <div className="flex justify-center">
-        <button className={styles.button} type="submit">
-          Add Banner
-        </button>
-      </div>
-    </form>
+        <div className="button-container">
+          <button type="submit" className="banner-form-button">Add Banner</button>
+        </div>
+      </form>
+    </div>
   );
 }
 

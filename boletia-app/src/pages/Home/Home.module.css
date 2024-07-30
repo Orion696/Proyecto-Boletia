@@ -1,7 +1,0 @@
-.container {
-  @apply flex flex-col space-y-5 items-center pt-10 w-full h-screen bg-blue-200;
-}
-
-.title {
-  @apply font-bold text-xl;
-}
