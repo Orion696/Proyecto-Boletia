@@ -2,7 +2,7 @@
 
 ## Introducción
 
-Este proyecto es una solución web desarrollada para sistematizar las funcionalidades internas de Boletia, permitiendo al equipo interno resolver problemas operativos sin necesidad de generar peticiones de soporte. La aplicación se ha desarrollado utilizando React y Tailwind CSS para asegurar una experiencia de usuario óptima y una arquitectura escalable.
+Este proyecto es una solución web desarrollada para sistematizar las funcionalidades internas de Boletia, permitiendo al equipo interno resolver problemas operativos sin necesidad de generar peticiones de soporte. La aplicación se ha desarrollado utilizando React para asegurar una experiencia de usuario óptima y una arquitectura escalable.
 
 ## Estructura del Proyecto
 
@@ -13,90 +13,92 @@ src/
 ├── components/
 │   ├── BannerForm/
 │   │   ├── BannerForm.js
-│   │   ├── BannerForm.module.css
+│   │   ├── BannerForm.css
 │   ├── BannerList/
 │   │   ├── BannerList.js
-│   │   ├── BannerList.module.css
+│   │   ├── BannerList.css
 ├── pages/
 │   ├── Home/
 │   │   ├── Home.js
-│   │   ├── Home.module.css
+│   │   ├── Home.css
 ├── App.js
 ├── index.js
 ├── index.css
 ```
 
-### Descripción de Carpetas y Archivos
+## Descripción de Carpetas y Archivos
 
-- **`src/assets/`**: Contiene recursos estáticos como imágenes.
-- **`src/components/`**: Contiene los componentes reutilizables de la aplicación.
-  - **`BannerForm/`**: Componente para el formulario de configuración de banners.
-  - **`BannerList/`**: Componente para listar y mostrar los banners configurados.
-- **`src/pages/`**: Contiene las páginas principales de la aplicación.
-  - **`Home/`**: Página principal que integra los componentes `BannerForm` y `BannerList`.
-- **`src/App.js`**: Componente raíz de la aplicación que configura el enrutamiento.
-- **`src/index.js`**: Punto de entrada principal de la aplicación.
-- **`src/index.css`**: Archivo de estilos globales utilizando Tailwind CSS.
+- **src/components/**: Contiene los componentes reutilizables de la aplicación.
+  - **BannerForm/**: Componente para el formulario de configuración de banners.
+  - **BannerList/**: Componente para listar y mostrar los banners configurados.
+- **src/pages/**: Contiene las páginas principales de la aplicación.
+  - **Home/**: Página principal que integra los componentes BannerForm y BannerList.
+- **src/App.js**: Componente raíz de la aplicación que configura el enrutamiento.
+- **src/index.js**: Punto de entrada principal de la aplicación.
+- **src/index.css**: Archivo de estilos globales.
 
-### Configuración del entorno
+## Requisitos Previos
 
-#### Requisitos previos
 - Node.js
 - npm (Administrador de paquetes de Node)
 
-#### Instalación
+## Instalación
+
 Para configurar el proyecto, siga los siguientes pasos:
 
 1. Clonar el repositorio:
-    ```sh
-    git clone https://github.com/Orion696/Proyecto-Boletia.git
-    cd Proyecto-Boletia
-    ```
+
+```sh
+git clone https://github.com/Orion696/Proyecto-Boletia.git
+cd Proyecto-Boletia
+```
 
 2. Instalar las dependencias:
-    ```sh
-    npm install
-    ```
 
----
+```sh
+npm install
+```
+
+## Ejecución del Proyecto
+
+Para iniciar la aplicación, ejecute el siguiente comando:
+
+```sh
+npm start
+```
 
 ## Descripción de Componentes
 
 ### BannerForm
 
-**Ubicación**: `src/components/BannerForm/BannerForm.js`
-
-**Descripción**: Componente de formulario que captura información sobre los eventos, incluyendo el nombre del evento, fecha, hora, URL de compra y tres imágenes (Desktop, Tablet, Mobile).
-
-**Validaciones**:
-- El nombre del evento es obligatorio.
-- La fecha del evento es obligatoria.
-- La hora del evento es obligatoria.
-- La URL de compra debe ser válida.
-- Cada imagen no debe exceder los 800 KB.
+- **Ubicación**: `src/components/BannerForm/BannerForm.js`
+- **Descripción**: Componente de formulario que captura información sobre los eventos, incluyendo el nombre del evento, fecha, hora, URL de compra y tres imágenes (Desktop, Tablet, Mobile).
+- **Validaciones**:
+  - El nombre del evento es obligatorio.
+  - La fecha del evento es obligatoria.
+  - La hora del evento es obligatoria.
+  - La URL de compra debe ser válida.
+  - Cada imagen no debe exceder los 800 KB.
 
 ### BannerList
 
-**Ubicación**: `src/components/BannerList/BannerList.js`
-
-**Descripción**: Componente que muestra una lista de banners agregados con sus respectivas imágenes en tamaños específicos. Permite la eliminación de banners con confirmación previa.
+- **Ubicación**: `src/components/BannerList/BannerList.js`
+- **Descripción**: Componente que muestra una lista de banners agregados con sus respectivas imágenes en tamaños específicos. Permite la eliminación de banners con confirmación previa.
 
 ### Home
 
-**Ubicación**: `src/pages/Home/Home.js`
-
-**Descripción**: Página principal que integra los componentes `BannerForm` y `BannerList`. Maneja el estado de los banners agregados y permite su gestión.
+- **Ubicación**: `src/pages/Home/Home.js`
+- **Descripción**: Página principal que integra los componentes BannerForm y BannerList. Maneja el estado de los banners agregados y permite su gestión.
 
 ## Estilos
 
-### Uso de Tailwind CSS
+- **Uso de CSS**: Se utiliza CSS para el diseño y estilos de los componentes. Los estilos personalizados se definen en archivos CSS para cada componente (`BannerForm.css`, `BannerList.css`, `Home.css`).
 
-Se utiliza Tailwind CSS para el diseño y estilos de los componentes. Los estilos personalizados se definen en módulos CSS para cada componente (`BannerForm.module.css`, `BannerList.module.css`, `Home.module.css`).
+### Ejemplos de clases utilizadas:
 
-**Ejemplos de clases utilizadas**:
-- `@apply flex flex-col space-y-2` para disposiciones flexibles y espaciamiento.
-- `@apply bg-green-300 hover:bg-green-500` para botones con efectos de hover.
-- `@apply text-red-400` para mensajes de error.
+- `.banner-form-container`: Define el contenedor del formulario con alineación centrada y padding.
+- `.banner-item`: Estilos para cada banner, incluyendo bordes y padding.
+- `.banner-links a, .banner-links button`: Estilos para los botones de "Buy Tickets" y "Delete" con efectos de hover.
 
 ## Funcionalidades Adicionales
 
