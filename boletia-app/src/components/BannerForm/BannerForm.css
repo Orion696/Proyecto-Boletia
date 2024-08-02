@@ -15,47 +15,13 @@
   max-width: 600px;
 }
 
-label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  box-sizing: border-box;
-  height: 40px;
-}
-
-input[type="file"] {
-  cursor: pointer;
-  padding: 0 10px;
-}
-
-input[type="date"],
-input[type="time"] {
-  cursor: pointer;
-  max-width: 180px;
-}
-
 .date-time-container {
   display: flex;
-  justify-content: space-between;
   gap: 10px;
 }
 
-.date-time-container label {
+.form-date-time {
   flex: 1;
-}
-
-.date-time-container input {
-  max-width: 100%;
-}
-
-.image-fields-container {
-  margin-top: 35px;
 }
 
 .button-container {

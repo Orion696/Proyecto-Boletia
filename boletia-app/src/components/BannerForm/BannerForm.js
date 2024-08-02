@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './BannerForm.css';
 
 function BannerForm({ onAddBanner }) {
@@ -65,93 +66,107 @@ function BannerForm({ onAddBanner }) {
   return (
     <div className="banner-form-container">
       <form className="banner-form" onSubmit={handleSubmit}>
-        <label>
-          Event Name:
+        <div className="form-floating mb-3">
           <input 
             type="text" 
+            className="form-control" 
+            id="eventName" 
             name="eventName" 
             value={formData.eventName} 
             onChange={handleChange} 
             required 
-            placeholder="Enter the event name" 
+            placeholder="Event Name" 
           />
+          <label htmlFor="eventName">Event Name</label>
           {errors.eventName && <span className="error">{errors.eventName}</span>}
-        </label>
+        </div>
 
         <div className="date-time-container">
-          <label>
-            Event Date:
+          <div className="form-floating mb-3 form-date-time">
             <input 
               type="date" 
+              className="form-control" 
+              id="eventDate" 
               name="eventDate" 
               value={formData.eventDate} 
               onChange={handleChange} 
               required 
-              placeholder="Select the event date" 
+              placeholder="Event Date" 
             />
+            <label htmlFor="eventDate">Event Date</label>
             {errors.eventDate && <span className="error">{errors.eventDate}</span>}
-          </label>
-          <label>
-            Event Time:
+          </div>
+          <div className="form-floating mb-3 form-date-time">
             <input 
               type="time" 
+              className="form-control" 
+              id="eventTime" 
               name="eventTime" 
               value={formData.eventTime} 
               onChange={handleChange} 
               required 
-              placeholder="Select the event time" 
+              placeholder="Event Time" 
             />
+            <label htmlFor="eventTime">Event Time</label>
             {errors.eventTime && <span className="error">{errors.eventTime}</span>}
-          </label>
+          </div>
         </div>
 
-        <label>
-          Purchase URL:
+        <div className="form-floating mb-3">
           <input 
             type="url" 
+            className="form-control" 
+            id="purchaseUrl" 
             name="purchaseUrl" 
             value={formData.purchaseUrl} 
             onChange={handleChange} 
             required 
-            placeholder="Enter the purchase URL" 
+            placeholder="Purchase URL" 
           />
+          <label htmlFor="purchaseUrl">Purchase URL</label>
           {errors.purchaseUrl && <span className="error">{errors.purchaseUrl}</span>}
-        </label>
+        </div>
 
         <div className="image-fields-container">
-          <label>
-            Desktop Image:
+          <div className="mb-3">
+            <label htmlFor="imageDesktop" className="form-label">Desktop Image:</label>
             <input 
+              className="form-control" 
               type="file" 
+              id="imageDesktop" 
               name="imageDesktop" 
               accept="image/*" 
               onChange={handleChange} 
               required 
             />
             {errors.imageDesktop && <span className="error">{errors.imageDesktop}</span>}
-          </label>
-          <label>
-            Tablet Image:
+          </div>
+          <div className="mb-3">
+            <label htmlFor="imageTablet" className="form-label">Tablet Image:</label>
             <input 
+              className="form-control" 
               type="file" 
+              id="imageTablet" 
               name="imageTablet" 
               accept="image/*" 
               onChange={handleChange} 
               required 
             />
             {errors.imageTablet && <span className="error">{errors.imageTablet}</span>}
-          </label>
-          <label>
-            Mobile Image:
+          </div>
+          <div className="mb-3">
+            <label htmlFor="imageMobile" className="form-label">Mobile Image:</label>
             <input 
+              className="form-control" 
               type="file" 
+              id="imageMobile" 
               name="imageMobile" 
               accept="image/*" 
               onChange={handleChange} 
               required 
             />
             {errors.imageMobile && <span className="error">{errors.imageMobile}</span>}
-          </label>
+          </div>
         </div>
 
         <div className="button-container">
