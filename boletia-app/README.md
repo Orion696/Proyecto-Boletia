@@ -17,11 +17,14 @@ src/
 │   ├── BannerList/
 │   │   ├── BannerList.js
 │   │   ├── BannerList.css
+│   ├── PaymentForm/
+│   │   ├── PaymentButton.js
 ├── pages/
 │   ├── Home/
 │   │   ├── Home.js
 │   │   ├── Home.css
 ├── App.js
+├── epaycoService.js
 ├── index.js
 ├── index.css
 ```
@@ -31,9 +34,11 @@ src/
 - **src/components/**: Contiene los componentes reutilizables de la aplicación.
   - **BannerForm/**: Componente para el formulario de configuración de banners.
   - **BannerList/**: Componente para listar y mostrar los banners configurados.
+  - **PaymentForm/**: Componente para gestionar los pagos utilizando ePayco.
 - **src/pages/**: Contiene las páginas principales de la aplicación.
   - **Home/**: Página principal que integra los componentes BannerForm y BannerList.
 - **src/App.js**: Componente raíz de la aplicación que configura el enrutamiento.
+- **src/epaycoService.js**: Servicio para interactuar con la API de ePayco.
 - **src/index.js**: Punto de entrada principal de la aplicación.
 - **src/index.css**: Archivo de estilos globales.
 
@@ -83,7 +88,12 @@ npm start
 ### BannerList
 
 - **Ubicación**: `src/components/BannerList/BannerList.js`
-- **Descripción**: Componente que muestra una lista de banners agregados con sus respectivas imágenes en tamaños específicos. Las imágenes se muestran en un carrusel que permite la navegación automática y manual. Permite la eliminación de banners con confirmación previa.
+- **Descripción**: Componente que muestra una lista de banners agregados con sus respectivas imágenes en tamaños específicos. Las imágenes se muestran en un carrusel que permite la navegación automática y manual. Permite la eliminación de banners con confirmación previa. Incluye un botón para realizar pagos utilizando ePayco.
+
+### PaymentButton
+
+- **Ubicación**: `src/components/PaymentForm/PaymentButton.js`
+- **Descripción**: Componente de botón que inicia el proceso de pago utilizando ePayco.
 
 ### Home
 
@@ -100,6 +110,7 @@ npm start
 - `.banner-item`: Estilos para cada banner, incluyendo bordes y padding.
 - `.banner-links a, .banner-links button`: Estilos para los botones de "Buy Tickets" y "Delete" con efectos de hover.
 - `.carousel-inner`: Estilos para centrar las imágenes dentro del carrusel.
+- `.payment-button`: Estilos personalizados para el botón de pago.
 
 ## Funcionalidades Adicionales
 

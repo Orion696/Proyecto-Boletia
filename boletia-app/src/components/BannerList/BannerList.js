@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './BannerList.css';
+import PaymentButton from '../PaymentForm/PaymentButton';
 
 function BannerList({ banners, onDeleteBanner }) {
   return (
@@ -15,6 +16,7 @@ function BannerList({ banners, onDeleteBanner }) {
               <a href={banner.purchaseUrl} target="_blank" rel="noopener noreferrer" className="btn btn-warning">Buy Tickets</a>
               <button type="button" className="btn btn-danger" onClick={() => onDeleteBanner(index)}>Delete</button>
             </div>
+            <PaymentButton amount={10000} description="Pago de ejemplo" className="payment-button"/>
           </div>
           <div id={`carouselExampleControls${index}`} className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
             <div className="carousel-inner">
