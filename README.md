@@ -2,7 +2,7 @@
 
 ## Introducción
 
-Este proyecto es una solución web desarrollada para sistematizar las funcionalidades internas de Boletia, permitiendo al equipo interno resolver problemas operativos sin necesidad de generar peticiones de soporte. La aplicación se ha desarrollado utilizando React para asegurar una experiencia de usuario óptima y una arquitectura escalable.
+Este proyecto es una solución web desarrollada para sistematizar las funcionalidades internas de Boletia, permitiendo al equipo interno resolver problemas operativos sin necesidad de generar peticiones de soporte. La aplicación se ha desarrollado utilizando React y Bootstrap para asegurar una experiencia de usuario óptima y una arquitectura escalable.
 
 ## Estructura del Proyecto
 
@@ -83,7 +83,7 @@ npm start
 ### BannerList
 
 - **Ubicación**: `src/components/BannerList/BannerList.js`
-- **Descripción**: Componente que muestra una lista de banners agregados con sus respectivas imágenes en tamaños específicos. Permite la eliminación de banners con confirmación previa.
+- **Descripción**: Componente que muestra una lista de banners agregados con sus respectivas imágenes en tamaños específicos. Las imágenes se muestran en un carrusel que permite la navegación automática y manual. Permite la eliminación de banners con confirmación previa.
 
 ### Home
 
@@ -92,13 +92,14 @@ npm start
 
 ## Estilos
 
-- **Uso de CSS**: Se utiliza CSS para el diseño y estilos de los componentes. Los estilos personalizados se definen en archivos CSS para cada componente (`BannerForm.css`, `BannerList.css`, `Home.css`).
+- **Uso de CSS y Bootstrap**: Se utiliza CSS y Bootstrap para el diseño y estilos de los componentes. Los estilos personalizados se definen en archivos CSS para cada componente (`BannerForm.css`, `BannerList.css`, `Home.css`).
 
 ### Ejemplos de clases utilizadas:
 
 - `.banner-form-container`: Define el contenedor del formulario con alineación centrada y padding.
 - `.banner-item`: Estilos para cada banner, incluyendo bordes y padding.
 - `.banner-links a, .banner-links button`: Estilos para los botones de "Buy Tickets" y "Delete" con efectos de hover.
+- `.carousel-inner`: Estilos para centrar las imágenes dentro del carrusel.
 
 ## Funcionalidades Adicionales
 
