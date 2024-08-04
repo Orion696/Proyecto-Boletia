@@ -2,7 +2,7 @@
 
 ## Introducción
 
-Este proyecto es una solución web desarrollada para sistematizar las funcionalidades internas de Boletia, permitiendo al equipo interno resolver problemas operativos sin necesidad de generar peticiones de soporte. La aplicación se ha desarrollado utilizando React y Bootstrap para asegurar una experiencia de usuario óptima y una arquitectura escalable.
+Este proyecto es una solución web desarrollada para sistematizar las funcionalidades internas de Boletia, permitiendo al equipo interno resolver problemas operativos sin necesidad de generar peticiones de soporte. La aplicación se ha desarrollado utilizando React, Bootstrap y Rsuite para asegurar una experiencia de usuario óptima y una arquitectura escalable.
 
 ## Estructura del Proyecto
 
@@ -77,13 +77,13 @@ npm start
 ### BannerForm
 
 - **Ubicación**: `src/components/BannerForm/BannerForm.js`
-- **Descripción**: Componente de formulario que captura información sobre los eventos, incluyendo el nombre del evento, fecha, hora, URL de compra y tres imágenes (Desktop, Tablet, Mobile).
+- **Descripción**: Componente de formulario que captura información sobre los eventos, incluyendo el nombre del evento, fecha, hora, URL de compra y tres imágenes (Desktop, Tablet, Mobile). Utiliza la librería Rsuite para los componentes de selección de fecha y hora.
 - **Validaciones**:
   - El nombre del evento es obligatorio.
   - La fecha del evento es obligatoria.
   - La hora del evento es obligatoria.
   - La URL de compra debe ser válida.
-  - Cada imagen no debe exceder los 800 KB.
+  - Cada imagen no debe exceder los 80 KB.
 
 ### BannerList
 
@@ -102,7 +102,7 @@ npm start
 
 ## Estilos
 
-- **Uso de CSS y Bootstrap**: Se utiliza CSS y Bootstrap para el diseño y estilos de los componentes. Los estilos personalizados se definen en archivos CSS para cada componente (`BannerForm.css`, `BannerList.css`, `Home.css`).
+- **Uso de CSS, Bootstrap y Rsuite**: Se utiliza CSS y Bootstrap para el diseño y estilos de los componentes. Rsuite se utiliza para la selección de fecha y hora. Los estilos personalizados se definen en archivos CSS para cada componente (`BannerForm.css`, `BannerList.css`, `Home.css`).
 
 ### Ejemplos de clases utilizadas:
 
@@ -128,6 +128,10 @@ npm start
 ### Agregar Nuevos Módulos
 
 Para agregar nuevas funcionalidades o módulos, cree nuevos componentes y páginas siguiendo la estructura existente. Agregue las nuevas rutas en `App.js` para habilitar la navegación.
+
+## Uso de Múltiples Librerías
+
+Este proyecto demuestra la capacidad de integración de múltiples librerías en una sola aplicación. Utilizamos Bootstrap para los estilos generales y la estructura de la página, Rsuite para componentes específicos como el selector de fecha y hora, y la SDK de ePayco para la integración de pagos. Esta combinación asegura una experiencia de usuario excelente y funcional, al mismo tiempo que permite aprovechar las fortalezas de cada librería.
 
 ## Conclusión
 
