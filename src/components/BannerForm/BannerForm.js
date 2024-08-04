@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'rsuite/dist/rsuite.min.css';
 import './BannerForm.css';
+import { DatePicker, Stack } from 'rsuite';
+import { FaCalendar, FaClock } from 'react-icons/fa';
 
 function BannerForm({ onAddBanner }) {
   const [formData, setFormData] = useState({
     eventName: '',
-    eventDate: '',
-    eventTime: '',
+    eventDate: null,
+    eventTime: null,
     purchaseUrl: '',
     imageDesktop: null,
     imageTablet: null,
@@ -15,11 +18,10 @@ function BannerForm({ onAddBanner }) {
 
   const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
+  const handleChange = (name, value) => {
     setFormData((prevData) => ({
       ...prevData,
-      [name]: files ? files[0] : value,
+      [name]: value,
     }));
   };
 
@@ -50,11 +52,15 @@ function BannerForm({ onAddBanner }) {
       setErrors(validationErrors);
       return;
     }
-    onAddBanner(formData);
+    onAddBanner({
+      ...formData,
+      eventDate: formData.eventDate ? formData.eventDate.toISOString().split('T')[0] : '',
+      eventTime: formData.eventTime ? formData.eventTime.toISOString().split('T')[1].substring(0, 5) : '',
+    });
     setFormData({
       eventName: '',
-      eventDate: '',
-      eventTime: '',
+      eventDate: null,
+      eventTime: null,
       purchaseUrl: '',
       imageDesktop: null,
       imageTablet: null,
@@ -74,7 +80,7 @@ function BannerForm({ onAddBanner }) {
             id="eventName" 
             name="eventName" 
             value={formData.eventName} 
-            onChange={handleChange} 
+            onChange={(e) => handleChange('eventName', e.target.value)} 
             required 
             placeholder="Event Name" 
           />
@@ -84,31 +90,24 @@ function BannerForm({ onAddBanner }) {
 
         <div className="date-time-container">
           <div className="form-floating mb-3 form-date-time">
-            <input 
-              type="date" 
-              className="form-control" 
-              id="eventDate" 
-              name="eventDate" 
-              value={formData.eventDate} 
-              onChange={handleChange} 
-              required 
+            <DatePicker 
+              caretAs={FaCalendar} 
               placeholder="Event Date" 
+              value={formData.eventDate}
+              onChange={(value) => handleChange('eventDate', value)}
+              block 
             />
-            <label htmlFor="eventDate">Event Date</label>
             {errors.eventDate && <span className="error">{errors.eventDate}</span>}
           </div>
           <div className="form-floating mb-3 form-date-time">
-            <input 
-              type="time" 
-              className="form-control" 
-              id="eventTime" 
-              name="eventTime" 
-              value={formData.eventTime} 
-              onChange={handleChange} 
-              required 
+            <DatePicker 
+              caretAs={FaClock} 
               placeholder="Event Time" 
+              format="HH:mm" 
+              value={formData.eventTime}
+              onChange={(value) => handleChange('eventTime', value)}
+              block 
             />
-            <label htmlFor="eventTime">Event Time</label>
             {errors.eventTime && <span className="error">{errors.eventTime}</span>}
           </div>
         </div>
@@ -120,7 +119,7 @@ function BannerForm({ onAddBanner }) {
             id="purchaseUrl" 
             name="purchaseUrl" 
             value={formData.purchaseUrl} 
-            onChange={handleChange} 
+            onChange={(e) => handleChange('purchaseUrl', e.target.value)} 
             required 
             placeholder="Purchase URL" 
           />
@@ -137,7 +136,7 @@ function BannerForm({ onAddBanner }) {
               id="imageDesktop" 
               name="imageDesktop" 
               accept="image/*" 
-              onChange={handleChange} 
+              onChange={(e) => handleChange('imageDesktop', e.target.files[0])} 
               required 
             />
             {errors.imageDesktop && <span className="error">{errors.imageDesktop}</span>}
@@ -150,7 +149,7 @@ function BannerForm({ onAddBanner }) {
               id="imageTablet" 
               name="imageTablet" 
               accept="image/*" 
-              onChange={handleChange} 
+              onChange={(e) => handleChange('imageTablet', e.target.files[0])} 
               required 
             />
             {errors.imageTablet && <span className="error">{errors.imageTablet}</span>}
@@ -163,7 +162,7 @@ function BannerForm({ onAddBanner }) {
               id="imageMobile" 
               name="imageMobile" 
               accept="image/*" 
-              onChange={handleChange} 
+              onChange={(e) => handleChange('imageMobile', e.target.files[0])} 
               required 
             />
             {errors.imageMobile && <span className="error">{errors.imageMobile}</span>}
