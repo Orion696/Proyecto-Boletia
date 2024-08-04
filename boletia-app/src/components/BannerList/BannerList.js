@@ -21,13 +21,13 @@ function BannerList({ banners, onDeleteBanner }) {
           <div id={`carouselExampleControls${index}`} className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img src={URL.createObjectURL(banner.imageDesktop)} className="d-block w-100" alt="Desktop" />
+                <img src={URL.createObjectURL(banner.imageDesktop)} className="desktop" alt="Desktop" />
               </div>
               <div className="carousel-item">
-                <img src={URL.createObjectURL(banner.imageTablet)} className="d-block w-100" alt="Tablet" />
+                <img src={URL.createObjectURL(banner.imageTablet)} className="tablet" alt="Tablet" />
               </div>
               <div className="carousel-item">
-                <img src={URL.createObjectURL(banner.imageMobile)} className="d-block w-100" alt="Mobile" />
+                <img src={URL.createObjectURL(banner.imageMobile)} className="mobile" alt="Mobile" />
               </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target={`#carouselExampleControls${index}`} data-bs-slide="prev">

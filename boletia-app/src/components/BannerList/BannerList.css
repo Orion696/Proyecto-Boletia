@@ -49,14 +49,29 @@
 
 .carousel-inner {
   width: 100%;
+  height: auto;
 }
 
 .carousel-item img {
   object-fit: cover;
   border: 1px solid #ddd;
   border-radius: 5px;
-  width: 100%;
-  height: auto;
+  margin: 0 auto;
+}
+
+.carousel-item img.desktop {
+  width: 1200px;
+  height: 700px;
+}
+
+.carousel-item img.tablet {
+  width: 800px;
+  height: 600px;
+}
+
+.carousel-item img.mobile {
+  width: 400px;
+  height: 800px;
 }
 
 .carousel-control-prev,
@@ -78,4 +93,8 @@
   flex: 1;
   text-align: center;
   white-space: nowrap;
+}
+
+.payment-button {
+  margin-top: 20px;
 }
