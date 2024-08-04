@@ -65,6 +65,7 @@ function BannerForm({ onAddBanner }) {
 
   return (
     <div className="banner-form-container">
+      <h1>Banner Configuration</h1>
       <form className="banner-form" onSubmit={handleSubmit}>
         <div className="form-floating mb-3">
           <input 

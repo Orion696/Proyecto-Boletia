@@ -18,7 +18,6 @@ function Home() {
 
   return (
     <div className="home">
-      <h1>Banner Configuration</h1>
       <BannerForm onAddBanner={addBanner} />
       <BannerList banners={banners} onDeleteBanner={deleteBanner} />
     </div>
