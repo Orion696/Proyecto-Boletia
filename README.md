@@ -132,7 +132,3 @@ Para agregar nuevas funcionalidades o módulos, cree nuevos componentes y págin
 ## Uso de Múltiples Librerías
 
 Este proyecto demuestra la capacidad de integración de múltiples librerías en una sola aplicación. Utilizamos Bootstrap para los estilos generales y la estructura de la página, Rsuite para componentes específicos como el selector de fecha y hora, y la SDK de ePayco para la integración de pagos. Esta combinación asegura una experiencia de usuario excelente y funcional, al mismo tiempo que permite aprovechar las fortalezas de cada librería.
-
-## Conclusión
-
-Esta documentación proporciona una guía completa y técnica del proyecto Boletia, cubriendo desde la estructura del proyecto hasta la configuración, ejecución y mantenimiento. Si tiene alguna pregunta o necesita más detalles, por favor consulte los archivos de código fuente o contacte al equipo de desarrollo.
